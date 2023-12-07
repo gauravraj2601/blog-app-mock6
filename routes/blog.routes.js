@@ -17,7 +17,7 @@ blogRouter.post("/blogs",auth,async(req,res)=>{
     }
 })
 
-blogRouter.get("/blogs", async(req,res)=>{
+blogRouter.get("/blogs",auth, async(req,res)=>{
     try {
         const blogs= await Blog_Model.find();
         res.status(200).send(blogs)
